@@ -29,7 +29,21 @@ const expected = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
  * @returns {Array<number>} The given nums after being sorted.
  */
 function bubbleSort(nums = []) {
-  // your code here
+  let isSorted = false;
+
+  while (isSorted === false) {
+    isSorted = true;
+
+    for (let i = 0; i < nums.length - 1; i++) {
+      let j = i + 1;
+      if (nums[i] > nums[j]) {
+        isSorted = false;
+        const temp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = temp;
+      }
+    }
+  }
   
   return nums;
 }
