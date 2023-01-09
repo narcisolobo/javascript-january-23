@@ -5,7 +5,7 @@
 Here you will find all the code as well as detailed README files for all of the materials we discuss in class.
 
 1. [Algorithms](./00-algorithms/)
-2. JavaScript
+2. [JavaScript](01-javascript/)
    1. [Course Overview](01-javascript/w1d1-course-overview/)
    2. [Node](01-javascript/w1d1-node/)
    3. Fundamentals
