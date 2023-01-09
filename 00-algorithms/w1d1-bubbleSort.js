@@ -1,5 +1,3 @@
-const _ = require('lodash')
-
 /* 
   Stable sort
   
@@ -37,11 +35,4 @@ function bubbleSort(nums = []) {
 }
 
 
-const result1 = bubbleSort(numsOrdered);
-console.log(_.isEqual(result1, expected));
-
-const result2 = bubbleSort(numsRandomOrder);
-console.log(_.isEqual(result2, expected));
-
-const result3 = bubbleSort(numsReversed);
-console.log(_.isEqual(result3, expected));
+export default bubbleSort;
