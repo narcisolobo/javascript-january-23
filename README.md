@@ -6,14 +6,15 @@ Here you will find all the code as well as detailed README files for all of the 
 
 1. [Algorithms](./00-algorithms/)
 2. JavaScript
-   1. Course Overview
-   2. Node
+   1. [Course Overview](01-javascript/w1d1-course-overview/)
+   2. [Node](01-javascript/w1d1-node/)
    3. Fundamentals
-      1. Intro to ES6
-      2. Scope and Hoisting
-      3. Destructuring
-      4. Spread and Rest Operators
-      5. Arrow Functions
+      1. [Heidi Chen's code from lecture](01-javascript/w1d1-heidi-fundamentals.js)
+      2. [Intro to ES6](01-javascript/w1d1-fundamentals/01-intro-to-ES6/)
+      3. [Scope and Hoisting](01-javascript/w1d1-fundamentals/02-scope-and-hoisting/)
+      4. [Destructuring](01-javascript/w1d1-fundamentals/03-destructuring/)
+      5. Spread and Rest Operators
+      6. Arrow Functions
    4. Object Oriented Programming (OOP)
    5. Functional Programming
       1. Callback Functions
