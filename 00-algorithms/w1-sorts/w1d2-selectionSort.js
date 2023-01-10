@@ -33,9 +33,26 @@ const expected = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
  * @returns {Array<number>} The given array after being sorted.
  */
 function selectionSort(nums = []) {
-  // your code here
+  let curr = 0;
+  let min = 0;
+  while (curr < nums.length) {
+    for (let i = curr + 1; i < nums.length; i++) {
+      if (nums[i] < nums[min]) {
+        min = i;
+      }
+    }
+    if (curr !== min) {
+      const temp = nums[curr];
+      nums[curr] = nums[min];
+      nums[min] = temp;
+    }
 
+    curr++;
+    min = curr;
+  }
   return nums;
 }
+
+console.log(selectionSort(numsRandomOrder));
 
 export default selectionSort;
