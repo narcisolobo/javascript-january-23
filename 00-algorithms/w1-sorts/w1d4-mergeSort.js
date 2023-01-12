@@ -47,8 +47,31 @@ const expectedMerge4 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
  *    both given halves.
  */
 function merge(left = [], right = []) {
-  // your code here
-  
+  const merged = [];
+  let leftIdx = 0;
+  let rightIdx = 0;
+
+  while (leftIdx < left.length && rightIdx < right.length) {
+    if (left[leftIdx] < right[rightIdx]) {
+      merged.push(left[leftIdx]);
+      leftIdx++;
+    } else {
+      merged.push(right[rightIdx]);
+      rightIdx++;
+    }
+  }
+
+  while(leftIdx < left.length) {
+    merged.push(left[leftIdx]);
+    leftIdx++;
+  }
+
+  while(rightIdx < right.length) {
+    merged.push(right[rightIdx]);
+    rightIdx++;
+  }
+
+  return merged;
 }
 
 const numsOrdered = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -66,8 +89,18 @@ const expectedSort = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
  * @returns {Array<number>} A New sorted array.
  */
 function mergeSort(nums = []) {
-  // your code here
+  if (nums.length < 2) {
+    return nums;
+  }
 
+  const midIdx = Math.floor(nums.length / 2);
+  const left = nums.slice(0, midIdx);
+  const right = nums.slice(midIdx);
+
+  const leftSorted = mergeSort(left);
+  const rightSorted = mergeSort(right);
+
+  return merge(leftSorted, rightSorted);
 }
 
 export default mergeSort;
