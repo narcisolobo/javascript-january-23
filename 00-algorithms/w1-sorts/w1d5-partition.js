@@ -34,17 +34,18 @@ const nums4 = [2, 1];
  * @returns {number} The idx where left section of smaller items ends.
  */
 function partition(nums = [], start = 0, end = nums.length - 1) {
-  // pivot value: value at end of nums
-  // pivot index: start
-  // for loop:
-    // if condition inside loop
-    // what does the if condition look like?
-    // inside the if, we swap current value with
-    // value at pivot index and
-    // increment pivot index
-  // after for loop, swap pivot value with
-  // value at pivot index
-  // return pivot index
+  const pivotVal = nums[end];
+  let pivotIdx = start;
+  for (let i = start; i < end; i++) {
+    if (nums[i] <= pivotVal) {
+      [nums[i], nums[pivotIdx]] = [nums[pivotIdx], nums[i]];
+      console.log(`i: ${i}, nums: ${nums}`)
+      pivotIdx++;
+    }
+  }
+  [nums[pivotIdx], nums[end]] = [nums[end], nums[pivotIdx]];
+  console.log(nums);
+  return pivotIdx;
 }
 
 export default partition;
