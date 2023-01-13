@@ -25,3 +25,4 @@ Here you will find all the code as well as detailed README files for all of the 
    3. [Function Components, Props and useState](02-react/w1d4-muppet-cards/)
    4. [Forms and Controlled Inputs](02-react/w1d4-forms-and-state/)
    5. [Conditional Rendering & Other Input Types](02-react/w1d5-conditional-rendering/)
+   6. [Box Generator Demo](02-react/w1d5-box-gen/)
