@@ -15,8 +15,12 @@ Here you will find all the code as well as detailed README files for all of the 
       4. [Destructuring](01-javascript/w1d1-fundamentals/03-destructuring/)
       5. [Spread and Rest Operators](01-javascript/w1d1-fundamentals/04-rest-and-spread/)
       6. [Arrow Functions](01-javascript/w1d1-fundamentals/05-arrow-functions/)
-   4. Object Oriented Programming (OOP)
-   5. Functional Programming
-      1. Callback Functions
-      2. Map and Filter
+   4. [Object Oriented Programming (OOP)](01-javascript/w1d2-oop/)
+   5. [Functional Programming](01-javascript/w1d2-functional/)
+      1. [Callback Functions](01-javascript/w1d2-functional/callback-functions/)
+      2. [Map and Filter](01-javascript/w1d2-functional/map-and-filter/)
 3. React
+   1. [Intro](02-react/w1d3-intro/my-first-react-app/)
+   2. [Class Components, Props and State](02-react/w1d3-superheroes/)
+   3. [Function Components, Props and useState](02-react/w1d4-muppet-cards/)
+   4. [Forms and Controlled Inputs](02-react/w1d4-forms-and-state/)
