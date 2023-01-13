@@ -27,9 +27,9 @@ const nums4 = [2, 1];
  * - Time: O(?).
  * - Space: O(?).
  * @param {Array<number>} nums
- * @param {number} left The index indicating the start of the slice of array
+ * @param {number} start The index indicating the start of the slice of array
  *    being processed.
- * @param {number} right The index indicating the end of the slice of array
+ * @param {number} end The index indicating the end of the slice of array
  *    being processed.
  * @returns {number} The idx where left section of smaller items ends.
  */
