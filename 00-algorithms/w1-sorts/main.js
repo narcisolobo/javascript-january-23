@@ -1,5 +1,5 @@
 import isEqual from "lodash/isEqual.js";
-import mergeSort from "./w1-sorts/w1d4-mergeSort.js";
+import mergeSort from "./w1d4-mergeSort.js";
 
 const numsOrdered = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const numsRandomOrder = [9, 2, 5, 6, 4, 3, 7, 10, 1, 8];
