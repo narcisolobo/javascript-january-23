@@ -1,70 +1,190 @@
-# Getting Started with Create React App
+# React Router
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+If you remember way back when to our first day of React, we talked about how React is a single page application. All the declarative descriptions of how each "page" should look is sent over to the client in the very first request, in a bundle of JavaScript.
 
-## Available Scripts
+React then manipulates the DOM for us when it needs to. So then the question becomes, how do we create the illusion of navigation to different "pages" in our app? So far, everything we've done has been tied to one URL - localhost:3000.
 
-In the project directory, you can run:
+React doesn't have a native implementation for creating the illusion of going to different pages. For that, we need to import a third-party library. It's called React Router.
 
-### `npm start`
+To install, open a terminal and navigate to your project folder and type `npm install react-router-dom`.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Using React Router
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+After installation, the first thing we should do is edit our `index.js` file like below:
 
-### `npm test`
+index.js:
+```jsx
+import { BrowserRouter } from 'react-router-dom';
+// other imports removed for brevity
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </React.StrictMode>
+);
+```
 
-### `npm run build`
+Now that we have wrapped our App component in React Router's BrowserRouter component, our entire React app can take advantage of React Router.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Let's switch to `App.js` and implement some basic routing features.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+App.js:
+```jsx
+import { Routes, Route } from 'react-router-dom';
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+function App() {
+  return (
+    <Routes>
+      <Route path={'/home'} element={ <Home /> } />
+    </Routes>
+  );
+}
+```
 
-### `npm run eject`
+Let's break down what we did here. First, we imported two components, Routes and Route, from react-router-dom.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+We then set up a parent `<Routes></Routes>` (plural) component and placed a `<Route />` (singular) component inside. All of our route components must be children of this parent routes component.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The `<Route />` component has two props, a `path` prop and an `element` prop. The `path` prop defines the URL, and the `element` prop defines the component that should render at that URL.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+If we type `http://localhost:3000/home` in our address bar, the Home component will render.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+We can set up as many of these routes as we like, we just have to make sure they're all children of the parent routes component.
 
-## Learn More
+App.js:
+```jsx
+import { Routes, Route } from 'react-router-dom';
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+function App() {
+  return (
+    <Routes>
+      <Route path={'/home'} element={ <Home /> } />
+      <Route path={'/about'} element={ <About /> } />
+      <Route path={'/services'} element={ <Services /> } />
+      <Route path={'/contact'} element={ <Contact /> } />
+    </Routes>
+  );
+}
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Now we have set up four different routes in our app, each mapping a path to a component.
 
-### Code Splitting
+## The Link Component
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+All that is well and good, but we cannot expect our users to type different URLs in the address bar. We need to give them hyperlinks to click. Let's talk about React Router's Link component.
 
-### Analyzing the Bundle Size
+Let's build a way to get to every "page" in the Home component.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Home.jsx:
+```jsx
+import { Link } from 'react-router-dom';
 
-### Making a Progressive Web App
+const Home = () => {
+  return (
+    <Link to={'/home'}>Home</Link>
+    <Link to={'/about'}>About</Link>
+    <Link to={'/services'}>Services</Link>
+    <Link to={'/contact'}>Contact</Link>
+  );
+};
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+If you think you recognize the above, you're right. They look just like an anchor tag in HTML. Instead of the HTML `<a></a>` tags, we have React Router's `<Link></Link>` tags. Instead of the anchor tag's `href` attribute, we have Link component's `to` prop. It behaves (and compiles) exactly the same as an anchor tag. The only difference is that our browser will not refresh when we click a Link tag.
 
-### Advanced Configuration
+## The `useParams` Hook
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Oftentimes, we need to pull parameters out of the URL. When building CRUD applications, we're constantly pulling the ID of an object out of the URL.
 
-### Deployment
+React Router has a hook for that, and it's called, `useParams`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+In any component that needs to pull parameters out of the URL, import the useParams hook and initialize it in your function component.
 
-### `npm run build` fails to minify
+Let's say we're building a CRUD application of recipes. In App.js, we could map a Route component to a path with an `:id` parameter.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+App.js:
+```jsx
+import { Routes, Route } from 'react-router-dom';
+
+function App() {
+  return (
+    <Routes>
+      <Route path={'/recipes/:id'} element={ <ShowRecipe /> } />
+    </Routes>
+  );
+}
+```
+
+The colon `:` after the slash in the path tells React Router that it should treat `id` as a parameter. Typing `http://localhost:3000/recipes/1` will render the `<ShowRecipe />` component.
+
+Inside the component, we can pull that ID out of the URL like so:
+
+ShowRecipe.jsx:
+```jsx
+import { useParams } from 'react-router-dom';
+
+const ShowRecipe = () => {
+  const params = useParams();
+  return (
+    <h2>You are viewing recipe id: {params.id}</h2>
+  );
+};
+```
+
+We could also choose to destructure the parameter if we like.
+
+ShowRecipe.jsx:
+```jsx
+import { useParams } from 'react-router-dom';
+
+const ShowRecipe = () => {
+  const { id } = useParams();
+  return (
+    <h2>You are viewing recipe id: {id}</h2>
+  );
+};
+```
+
+## The `useNavigate` Hook
+
+Let's say we have a form in our recipe CRUD app for users to add their own recipe. After they submit the form, we would want to "redirect" the user to a list component showing all the recipes. For that, we'll have to import and initialize React Router's `useNavigate` hook.
+
+NewRecipe.jsx:
+```jsx
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
+const NewRecipe = () => {
+  const [recipe, setRecipe] = useState();
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.prevent.default();
+    navigate('/recipes');
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <label>Recipe Name:</label>
+      <input
+        type="text"
+        value={recipe}
+        onChange={e => e.target.value}  
+      />
+      <input type="submit" value="Add Recipe">
+    </form>
+  );
+};
+```
+
+In `handleSubmit` we used the `navigate` function returned by the `useNavigate` hook to "redirect" the user to a new URL.
+
+## More React Router
+
+The above features should be enough for most of the apps we'll be building, but React Router has many more features.
+
+This afternoon, I'll be going through some of the features I've been able to explore. Here at the Dojo, we're not only here to learn, but to "learn how to learn". A big part of learning how to learn is by reading the documentation of tools we're using.
+
+I encourage you to complete the [tutorial](https://reactrouter.com/en/v6.3.0/getting-started/tutorial) at React Router's website and then read the documentation, especially the [overview](https://reactrouter.com/en/v6.3.0/getting-started/overview) section.
