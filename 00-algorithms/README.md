@@ -6,3 +6,8 @@
 3. [Insertion Sort](./w1d1-sorts/w1d3-insertionSort.js)
 4. [Merge Sort](./w1d1-sorts/w1d4-mergeSort.js)
 5. [Partition](./w1-sorts/w1d5-partition.js) and [Quick Sort](./w1-sorts/w1d5-quickSort.js)
+   
+## Week Two: Sets and Arrays
+1. [Ordered Intersection](./w2-sets-and-arrays/w2d1-orderedIntersection.js)
+2. [Ordered Multiset Union](./w2-sets-and-arrays/w2d2-orderedMultisetUnion.js)
+3. [Diagonal Difference](./w2-sets-and-arrays/w2d2-diagonalDifference.js)
