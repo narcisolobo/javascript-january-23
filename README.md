@@ -27,4 +27,5 @@ Here you will find all the code as well as detailed README files for all of the 
    5. [Conditional Rendering & Other Input Types](02-react/w1d5-conditional-rendering/)
    6. [Box Generator Demo](02-react/w1d5-box-gen/)
    7. [useReducer](02-react/w1d5-usereducer/)
-   8. [React Router](02-react/w2d2-react-router)
+   8. [React Router](02-react/w2d2-react-router/)
+   9. [Retrospective](02-react/w2d2-retrospective/)
