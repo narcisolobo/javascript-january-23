@@ -50,26 +50,6 @@ const expected5 = [1, 2, 3];
  *    i.e., if the element is in one array and NOT the other, it should be
  *    included in the return.
  */
-function symmetricDifferences(numsA, numsB) {}
-
-/*****************************************************************************/
-
-/**
- * Produces the symmetric differences, aka disjunctive union of two sets.
- * Venn Diagram Visualization:
- * @see https://miro.medium.com/max/3194/1*N3Z94nCNu8IHsFenIAELJw.jpeg
- * - Time: O(2(n * m)) -> O(n * m), n = numsA.length, m = numsB.length the two
- *    constant 2 was because we are doing the n * m twice. The constant 2 is
- *    dropped.
- * - Space:  O(n + m) because potentially all items from each are kept.
- * @param  {Array<number>} numsA
- * @param  {Array<number>} numsB
- *    Both given sets are multisets in any order (contain dupes).
- * @returns {Array<number>} The union of the given sets but excluding the shared
- *    values (union without intersection).
- *    i.e., if the element is in one array and NOT the other, it should be
- *    included in the return.
- */
 function symmetricDifferences(numsA, numsB) {
   // your code here
 }
