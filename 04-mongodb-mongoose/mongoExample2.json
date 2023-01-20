@@ -1,0 +1,13 @@
+{
+    "_id": "57b468d9-e823-432f-bcca-7c8b5f407a5a",
+    "firstName": "Narciso",
+    "lastName": "Lobo",
+    "contact": {
+        "email": "nlobo@codingdojo.com",
+        "phone": "(555) 456-7890"
+    },
+    "location": "Los Angeles",
+    "hobbies": [
+        "ukulele", "comic books", "cooking"
+    ]
+}
