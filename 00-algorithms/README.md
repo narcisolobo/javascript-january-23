@@ -11,3 +11,7 @@
 1. [Ordered Intersection](./w2-sets-and-arrays/w2d1-orderedIntersection.js)
 2. [Ordered Multiset Union](./w2-sets-and-arrays/w2d2-orderedMultisetUnion.js)
 3. [Diagonal Difference](./w2-sets-and-arrays/w2d2-diagonalDifference.js)
+4. [Disjunctive Union](./w2-sets-and-arrays/w2d3-disjunctiveUnion.js)
+5. [Measure Water Levels](./w2-sets-and-arrays/w2d3-measureWaterLevels.js)
+6. [Find Consecutive Sums](./w2-sets-and-arrays/w2d4-findConsecutiveSums.js)
+7. [All Non-Consecutive](./w2-sets-and-arrays/w2d4-allNonConsecutive.js)
