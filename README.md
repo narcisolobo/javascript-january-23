@@ -29,3 +29,13 @@ Here you will find all the code as well as detailed README files for all of the 
    7. [useReducer](02-react/w1d5-usereducer/)
    8. [React Router](02-react/w2d2-react-router/)
    9. [Retrospective](02-react/w2d2-retrospective/)
+4. Express
+   1. [What is an API?](03-express/w2d3-apis/)
+   2. [Postman](03-express/w2d3-postman/)
+   3. [Hello Express](03-express/w2d3-hello-express/)
+   4. [Band Faker](03-express/w2d3-band-faker/)
+   5. [Building and Testing an API](03-express/w2d3-testing-api/)
+5. MongoDB and Mongoose
+   1. [MongoDB](04-mongodb-mongoose/w2d4-mongodb/)
+   2. [Hello Mongoose](04-mongodb-mongoose/w2d4-server/)
+   3. [Express + Mongoose (Ciso's Version)](04-mongodb-mongoose/w2d4-ciso-server/)
