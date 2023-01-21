@@ -74,7 +74,7 @@ Each document you insert into this collection should have the following format: 
 <details>
   <summary>4. Get all students.</summary>
 
-  To read all documents in the collection, pass an empty document as the query filter parameter to the `db.collection.find()` method.
+  To read all documents in the collection, use the `db.collection.find()` method.
   ```
   db.students.find()
   ```
