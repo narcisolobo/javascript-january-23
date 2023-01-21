@@ -3,11 +3,11 @@
 ## Expand the spoiler text to view the answers.
 
 <details>
-  <summary>1. Create a database called 'myFirstDb'.</summary>
+  <summary>1. Create a database called 'my_first_db'.</summary>
 
   The `use <db>` helper will switch to the `<db>` you specify. If it does not exist, it will be created.
   ```
-  use myFirstDb
+  use my_first_db
   ```
 </details>
 
