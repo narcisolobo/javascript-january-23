@@ -37,5 +37,6 @@ Here you will find all the code as well as detailed README files for all of the 
    5. [Building and Testing an API](03-express/w2d3-testing-api/)
 5. MongoDB and Mongoose
    1. [MongoDB](04-mongodb-mongoose/w2d4-mongodb/)
-   2. [Hello Mongoose](04-mongodb-mongoose/w2d4-server/)
-   3. [Express + Mongoose (Ciso's Version)](04-mongodb-mongoose/w2d4-ciso-server/)
+   2. [Using MongoDB](04-mongodb-mongoose/w2d4-using-mongodb/README.md)
+   3. [Hello Mongoose](04-mongodb-mongoose/w2d4-server/)
+   4. [Express + Mongoose (Ciso's Version)](04-mongodb-mongoose/w2d4-ciso-server/)
