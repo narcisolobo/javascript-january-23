@@ -15,3 +15,11 @@
 5. [Measure Water Levels](./w2-sets-and-arrays/w2d3-measureWaterLevels.js)
 6. [Find Consecutive Sums](./w2-sets-and-arrays/w2d4-findConsecutiveSums.js)
 7. [All Non-Consecutive](./w2-sets-and-arrays/w2d4-allNonConsecutive.js)
+
+## Week Three: Objects
+1. [Object Entries](./w3-objects/w3d1-objectEntries.js)
+2. [Insert SQL](./w3-objects/w3d1-insertSQL.js)
+3. Find Objects
+4. Find by ID and Update
+5. Filter by Key
+6. Santa's Naughty List
