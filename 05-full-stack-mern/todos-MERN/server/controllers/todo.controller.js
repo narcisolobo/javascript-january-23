@@ -10,4 +10,17 @@ const create = (req, res) => {
     .catch(err => res.status(400).json(err));
 };
 
-module.exports = { message, create };
+const findAll = (req, res) => {
+  Todo.find()
+    .then(todos => res.status(200).json(todos))
+    .catch(err => res.status(400).json(err));
+};
+
+const findOne = (req, res) => {
+  const { id } = req.params;
+  Todo.findById(id)
+  .then(todo => res.status(200).json(todo))
+  .catch(err => res.status(400).json(err));
+};
+
+module.exports = { message, create, findAll, findOne };

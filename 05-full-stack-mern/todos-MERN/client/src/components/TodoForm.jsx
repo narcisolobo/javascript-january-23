@@ -1,11 +1,12 @@
 import axios from "axios";
 import { useState } from "react";
 
-function TodoForm() {
+function TodoForm({ setLoaded }) {
   const [task, setTask] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setTask('')
     const newTodo = {
       task,
       isComplete: false,
@@ -13,12 +14,15 @@ function TodoForm() {
 
     axios
       .post('http://localhost:5001/api/todos', newTodo)
-      .then(res => console.log(res.data))
+      .then(res => {
+        console.log(res.data)
+        setLoaded(false);
+      })
       .catch(err => console.log(err));
   };
 
   return (
-    <div className="card">
+    <div className="card mb-3">
       <div className="card-body">
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
