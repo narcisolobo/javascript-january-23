@@ -25,7 +25,7 @@ function Main() {
     <div>
       <h1>Main</h1>
       <TodoForm setLoaded={setLoaded} />
-      {loaded && <TodoList todos={reversedTodos} />}
+      {loaded && <TodoList todos={reversedTodos} setLoaded={setLoaded} />}
     </div>
   );
 }
