@@ -62,7 +62,7 @@
 3. Open Postman or Thunder Client and test each endpoint. Troubleshoot if necessary.
 
 ## Create Your React App
-1. In your project directory, create your react app and call it "client." Make sure you're in the right directory when you do this! The client directory should be a sibling of your server directory.
+1. Change directories to your project directory. Create your react app and call it "client." Make sure you're in the right directory when you do this! The client directory should be a sibling of your server directory.
 2. Navigate into your client directory with `cd client`.
 3. Install your React dependencies:
    1. axios
