@@ -29,10 +29,9 @@
 - Your code
 - Stack Overflow
 - Official documentation
-- TA Vincent, Instructor Narciso, TAs on Discord (open a new exam room)
+- TA Vincent, Instructor Narciso
 
 ## Asking for Help
-- Bring laptop to an instructor
 - We can only hint, we cannot give any answers
 
 ## Extensions
