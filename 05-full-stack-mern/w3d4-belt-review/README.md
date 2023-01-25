@@ -4,6 +4,7 @@
 **Red Belt Requirements**
 - Full CRUD functionality
 - Validations on create
+- All yellow post-it requirements
 
 **Black Belt Requirements**
 - Login and Registration
