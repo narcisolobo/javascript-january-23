@@ -12,6 +12,7 @@
 - Front-end validations
 - Sorting
 - Unique values
+- socket.io
 - Deployment (send me your IP address within 24 hours)
 
 ## Taking the Exam
