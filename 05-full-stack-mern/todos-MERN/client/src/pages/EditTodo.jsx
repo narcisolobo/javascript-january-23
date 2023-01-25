@@ -41,10 +41,7 @@ function EditTodo() {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .put(`http://localhost:5001/api/todos/${id}`, {
-        task: todo.task,
-        isComplete: todo.isComplete,
-      })
+      .put(`http://localhost:5001/api/todos/${id}`, todo)
       .then((res) => {
         console.log(res.data);
         navigate('/todos');

@@ -30,4 +30,11 @@ const updateOne = (req, res) => {
     .catch((err) => res.status(400).json(err));
 };
 
-module.exports = { message, create, findAll, findOne, updateOne };
+const deleteOne = (req, res) => {
+  const { id } = req.params;
+  Todo.findByIdAndDelete(id)
+    .then((todo) => res.status(200).json(todo))
+    .catch((err) => res.status(400).json(err));
+};
+
+module.exports = { message, create, findAll, findOne, updateOne, deleteOne };

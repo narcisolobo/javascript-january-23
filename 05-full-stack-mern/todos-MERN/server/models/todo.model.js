@@ -2,7 +2,10 @@ const mongoose = require("mongoose");
 
 const todoSchema = new mongoose.Schema(
   {
-    task: String,
+    task: {
+      type: String,
+      required: [true, 'Task is required.']
+    },
     isComplete: Boolean,
   },
   { timestamps: true }

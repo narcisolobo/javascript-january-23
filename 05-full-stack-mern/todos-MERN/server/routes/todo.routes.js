@@ -1,5 +1,12 @@
 // const PersonController = require('../controllers/person.controller');
-const { create, message, findAll, findOne, updateOne } = require('../controllers/todo.controller');
+const {
+  create,
+  message,
+  findAll,
+  findOne,
+  updateOne,
+  deleteOne
+} = require('../controllers/todo.controller');
 
 const express = require('express');
 const todoRouter = express.Router();
@@ -19,6 +26,7 @@ todoRouter
 todoRouter
   .route('/todos/:id')
   .get(findOne)
-  .put(updateOne);
+  .put(updateOne)
+  .delete(deleteOne);
 
 module.exports = todoRouter;

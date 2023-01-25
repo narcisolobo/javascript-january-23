@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from "axios";
 import { Link } from "react-router-dom";
 
 function TodoList({ todos, setLoaded }) {
@@ -7,11 +7,21 @@ function TodoList({ todos, setLoaded }) {
       .put(`http://localhost:5001/api/todos/${id}`, {
         isComplete: e.target.checked,
       })
-      .then(res => {
+      .then((res) => {
         console.log(res.data);
         setLoaded(false);
       })
-      .catch(err => console.log(err));
+      .catch((err) => console.log(err));
+  };
+
+  const handleDelete = (id) => {
+    axios
+      .delete(`http://localhost:5001/api/todos/${id}`)
+      .then((res) => {
+        console.log(res.data);
+        setLoaded(false);
+      })
+      .catch((err) => console.log(err));
   };
 
   return (
@@ -20,18 +30,26 @@ function TodoList({ todos, setLoaded }) {
       return (
         <div key={todo._id} className="card mb-3">
           <div className="card-body">
-            <div className="form-check">
-              <input
-                type="checkbox"
-                name="isComplete"
-                id="isComplete"
-                className="form-check-input"
-                checked={todo.isComplete}
-                onChange={(e) => handleCheck(e, todo._id)}
-              />
-              <label htmlFor="isComplete" className="form-check-label">
-                <Link to={`/todos/${todo._id}`}>{todo.task}</Link>
-              </label>
+            <div className="d-flex justify-content-between align-items-center">
+              <div className="form-check">
+                <input
+                  type="checkbox"
+                  name="isComplete"
+                  id="isComplete"
+                  className="form-check-input"
+                  checked={todo.isComplete}
+                  onChange={(e) => handleCheck(e, todo._id)}
+                />
+                <label htmlFor="isComplete" className="form-check-label">
+                  <Link to={`/todos/${todo._id}`}>{todo.task}</Link>
+                </label>
+              </div>
+              <button
+                className="btn btn-danger"
+                onClick={() => handleDelete(todo._id)}
+              >
+                Delete
+              </button>
             </div>
           </div>
         </div>

@@ -3,22 +3,27 @@ import { useState } from "react";
 
 function TodoForm({ setLoaded }) {
   const [task, setTask] = useState("");
+  const [errors, setErrors] = useState({});
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setTask('')
+    setTask("");
     const newTodo = {
       task,
       isComplete: false,
     };
 
     axios
-      .post('http://localhost:5001/api/todos', newTodo)
-      .then(res => {
-        console.log(res.data)
+      .post("http://localhost:5001/api/todos", newTodo)
+      .then((res) => {
+        console.log(res.data);
+        setErrors({});
         setLoaded(false);
       })
-      .catch(err => console.log(err));
+      .catch((err) => {
+        console.log(err);
+        setErrors(err?.response?.data?.errors);
+      });
   };
 
   return (
@@ -37,9 +42,16 @@ function TodoForm({ setLoaded }) {
               value={task}
               onChange={(e) => setTask(e.target.value)}
             />
+            {errors?.task && (
+              <span className="form-text text-danger">
+                {errors.task.message}
+              </span>
+            )}
           </div>
           <div className="d-flex justify-content-end">
-            <button type="submit" className="btn btn-primary">SUBMIT</button>
+            <button type="submit" className="btn btn-primary">
+              SUBMIT
+            </button>
           </div>
         </form>
       </div>
