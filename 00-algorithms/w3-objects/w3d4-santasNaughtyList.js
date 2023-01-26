@@ -11,8 +11,8 @@
 
 const students = [
   {
-    firstName: "FN1",
-    lastName: "LN1",
+    firstName: "Kermit",
+    lastName: "the Frog",
     habits: [
       "doesn't wash dishes",
       "falls asleep in lecture",
@@ -20,27 +20,27 @@ const students = [
     ],
   },
   {
-    firstName: "FN2",
-    lastName: "LN2",
+    firstName: "Miss",
+    lastName: "Piggy",
     habits: ["shows up late", "washes dishes", "helps peers"],
   },
   {
-    firstName: "FN3",
-    lastName: "LN3",
+    firstName: "Fozzie",
+    lastName: "Bear",
     habits: ["doesn't wash dishes", "hoards snacks", "shows up late"],
   },
   {
-    firstName: "FN4",
-    lastName: "LN4",
+    firstName: "Gonzo",
+    lastName: "the Great",
     habits: ["shows up early", "helps peers", "washes dishes"],
   },
 ];
 
 const badHabit1 = "doesn't wash dishes";
-const expected1 = ["FN1 LN1", "FN3 LN3"];
+const expected1 = ["Kermit the Frog", "Fozzie Bear"];
 
 const badHabit2 = "shows up late";
-const expected2 = ["FN2 LN2", "FN3 LN3"];
+const expected2 = ["Miss Piggy", "Fozzie Bear"];
 
 const badHabit3 = "vapes too much";
 const expected3 = [];
