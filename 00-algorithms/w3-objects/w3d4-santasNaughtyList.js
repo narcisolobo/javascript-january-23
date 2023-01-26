@@ -37,18 +37,18 @@ const students = [
 ];
 
 const badHabit1 = "doesn't wash dishes";
-const expected1 = ["Kermit the Frog", "Fozzie Bear"];
+const expected1 = ["FN1 LN1", "FN3 LN3"];
 
 const badHabit2 = "shows up late";
-const expected2 = ["Miss Piggy", "Fozzie Bear"];
+const expected2 = ["FN2 LN2", "FN3 LN3"];
 
 const badHabit3 = "vapes too much";
 const expected3 = [];
 
 /**
  * Finds a list of people whose habits contain the given bad habit.
- * - Time O(?).
- * - Space O(?).
+ * - Time: O(n * m). n = persons.length, m = habits.length.
+ * - Space: O(n) linear. Every person could be matched.
  * @typedef {Object} Person
  * @property {string} firstName
  * @property {string} lastName
@@ -58,24 +58,34 @@ const expected3 = [];
  * @returns {Array<Person>} The people that have the given bad habit.
  */
 function santasNaughtyList(persons, badHabit) {
-  // your code here
+  const coalRecipients = [];
+
+  for (let i = 0; i < persons.length; i++) {
+    const person = persons[i];
+
+    for (let j = 0; j < person.habits.length; ++j) {
+      const personsHabit = person.habits[j];
+
+      if (personsHabit === badHabit) {
+        coalRecipients.push(`${person.firstName} ${person.lastName}`);
+        // found what we are looking for, no need to keep looping
+        break;
+      }
+    }
+  }
+  return coalRecipients;
 }
 
 /**
- * Finds a list of people whose habits contain the given bad habit.
- * - Time O(?).
- * - Space O(?).
- * @typedef {Object} Person
- * @property {string} firstName
- * @property {string} lastName
- * @property {Array<string>} habits
- * @param {Array<Person>} persons
- * @param {string} badHabit
- * @returns {Array<Person>} The people that have the given bad habit.
+ * - Time: O(n * m) + O(n), where n is persons.length and m is habits length.
+ *    The + O(n) is from the .map.
+ * - Space: O(n) linear.
  */
-function santasNaughtyListFunctional(persons, badHabit) {
-  // your code here
-}
+const functionalSantasNaughtyList = (persons, badHabit) =>
+  persons
+    .filter((person) => person.habits.includes(badHabit))
+    .map((person) => `${person.firstName} ${person.lastName}`);
+
 
 export {
   santasNaughtyList,
