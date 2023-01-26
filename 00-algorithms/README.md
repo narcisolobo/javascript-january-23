@@ -19,7 +19,7 @@
 ## Week Three: Objects
 1. [Object Entries](./w3-objects/w3d1-objectEntries.js)
 2. [Insert SQL](./w3-objects/w3d1-insertSQL.js)
-3. Find Objects
-4. Find by ID and Update
+3. [Find Objects](./w3-objects/w3d2-findObjects.js)
+4. [Find by ID and Update](./w3-objects/w3d2-findByIdAndUpdate.js)
 5. Filter by Key
 6. Santa's Naughty List
