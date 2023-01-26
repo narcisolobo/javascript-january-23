@@ -1,7 +1,7 @@
-import { useOutletContext } from "react-router-dom";
+import { Link, useOutletContext } from "react-router-dom";
 
 function AllAlbums() {
-  const albums = useOutletContext();
+  const { albums } = useOutletContext();
 
   return (
     <table className="table">
@@ -16,8 +16,8 @@ function AllAlbums() {
         {
           albums && albums.map(album => {
             return (
-              <tr>
-                <td>{album.title}</td>
+              <tr key={album._id}>
+                <td><Link to={`/albums/${album._id}`}>{album.title}</Link></td>
                 <td>{album.artist}</td>
                 <td>{album.isOwned ? 'Yes' : 'No' }</td>
               </tr>

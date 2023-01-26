@@ -4,20 +4,23 @@ import { Outlet } from "react-router-dom";
 
 function Albums() {
   const [albums, setAlbums] = useState([]);
+  const [flag, setFlag] = useState(false)
 
   useEffect(() => {
-    const controller = new AbortController;
+    const controller = new AbortController();
     axios
       .get('http://localhost:5001/api/albums', { signal: controller.signal })
-      .then(res => setAlbums(res.data))
+      .then(res => {
+        setAlbums(res.data);
+        setFlag(!flag)
+      })
       .catch(err => console.log(err))
     return () => controller.abort();
-  }, []);
+  }, [flag]);
 
   return (
     <div>
-      <h2>Albums</h2>
-      <Outlet context={albums} />
+      <Outlet context={{ albums, flag, setFlag }} />
     </div>
   )
 }
